@@ -1,5 +1,9 @@
 # session-handoff
 
+<p align="center">
+  中文 · <a href="./README_EN.md">English</a>
+</p>
+
 一个轻量的 Codex skill：在上下文变长之前，总结当前工作；开启新的
 session 后，先对齐理解，再继续执行。
 
@@ -172,76 +176,5 @@ sho-read
 系统。它刻意保持简单：一次交接，一份 Markdown 文件，一个清晰的确认点。
 
 ## License
-
-[MIT](./LICENSE) © 2026 pika wanwan
-
----
-
-## English
-
-`session-handoff` is a lightweight Codex skill for carrying work across fresh
-sessions without dragging the full conversation history along.
-
-Long sessions gradually accumulate noise. Fresh sessions start clean, but lack
-the decisions, progress, and constraints that matter. This skill creates a
-concise, project-local Markdown handoff before you switch sessions.
-
-### Quick Start
-
-In the old session:
-
-```text
-$session-handoff sho-summary
-```
-
-In the new session:
-
-```text
-$session-handoff sho-read
-```
-
-The new session reads the latest handoff, verifies the actual project state,
-explains its understanding, lists next steps and risks, and waits for your
-confirmation before taking action.
-
-### What Gets Preserved
-
-- Session summary
-- End goal
-- Completed and remaining work
-- Confirmed decisions and constraints
-- Relevant files
-- Verification results
-- Blockers
-- Concrete next actions
-
-### Installation
-
-```bash
-git clone https://github.com/jwliuiiii0520-shape-it/session-handoff.git
-mkdir -p ~/.codex/skills/session-handoff
-cp session-handoff/SKILL.md ~/.codex/skills/session-handoff/SKILL.md
-```
-
-### Handoff Files
-
-Handoff files are stored inside the current project:
-
-```text
-.codex/handoff/YYYY-MM-DD-HHmm-session-title.md
-```
-
-Git repositories use the repository root. Non-Git projects use the current
-working directory.
-
-### Design Principles
-
-- Preserve actionable context, not chat transcripts.
-- Store Markdown files locally inside the project.
-- Keep historical handoffs instead of overwriting them.
-- Verify actual files before trusting a handoff.
-- Align with the user before resuming execution.
-
-### License
 
 [MIT](./LICENSE) © 2026 pika wanwan
